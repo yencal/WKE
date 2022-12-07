@@ -1,0 +1,665 @@
+The system is: Linux - 4.18.0-240.22.1.el8_3.aarch64 - aarch64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/vast/home/stevenw/WKE/CMakeFiles/3.19.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/vast/home/stevenw/WKE/CMakeFiles/3.19.2/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3a85b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a85b.dir/build.make CMakeFiles/cmTC_3a85b.dir/build
+gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc   -v -o CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -c /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/cc1 -quiet -v /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc7tdIkg.s
+GNU C17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include
+ /usr/local/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed
+ /usr/include
+End of search list.
+GNU C17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 61e467b8f19fbb6071157e8d6e6b0bef
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o /tmp/cc7tdIkg.s
+GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+Linking C executable cmTC_3a85b
+/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a85b.dir/link.txt --verbose=1
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc  -v CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -o cmTC_3a85b 
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc
+COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3a85b' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccipoH9h.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -o cmTC_3a85b /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3a85b' '-mlittle-endian' '-mabi=lp64'
+gmake[1]: Leaving directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+    add: [/usr/local/include]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/include] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include;/usr/local/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_3a85b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a85b.dir/build.make CMakeFiles/cmTC_3a85b.dir/build]
+  ignore line: [gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc   -v -o CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -c /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc]
+  ignore line: [Target: aarch64-unknown-linux-gnu]
+  ignore line: [Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c c++ fortran lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/cc1 -quiet -v /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc7tdIkg.s]
+  ignore line: [GNU C17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)]
+  ignore line: [	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5)  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)]
+  ignore line: [	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5)  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 61e467b8f19fbb6071157e8d6e6b0bef]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o /tmp/cc7tdIkg.s]
+  ignore line: [GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8]
+  ignore line: [COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [Linking C executable cmTC_3a85b]
+  ignore line: [/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a85b.dir/link.txt --verbose=1]
+  ignore line: [/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc  -v CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -o cmTC_3a85b ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper]
+  ignore line: [Target: aarch64-unknown-linux-gnu]
+  ignore line: [Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c c++ fortran lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3a85b' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccipoH9h.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -o cmTC_3a85b /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccipoH9h.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+    arg [-X] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-maarch64linux] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_3a85b] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o] ==> ignore
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0]
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..]
+    arg [CMakeFiles/cmTC_3a85b.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0]
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64;/lib64;/usr/lib64;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7dc32/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7dc32.dir/build.make CMakeFiles/cmTC_7dc32.dir/build
+gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++   -v -std=gnu++17 -o CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -c /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-std=gnu++17' '-o' 'CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/cc1plus -quiet -v -D_GNU_SOURCE /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -std=gnu++17 -version -o /tmp/ccAn7dhE.s
+GNU C++17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/aarch64-unknown-linux-gnu
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/backward
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include
+ /usr/local/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed
+ /usr/include
+End of search list.
+GNU C++17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 5bc963d1c8c50a7c954c8fe4c2eee129
+COLLECT_GCC_OPTIONS='-v' '-std=gnu++17' '-o' 'CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccAn7dhE.s
+GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-std=gnu++17' '-o' 'CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+Linking CXX executable cmTC_7dc32
+/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7dc32.dir/link.txt --verbose=1
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++  -v CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7dc32 
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++
+COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7dc32' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvcEfoG.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -o cmTC_7dc32 /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7dc32' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+gmake[1]: Leaving directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/aarch64-unknown-linux-gnu]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/backward]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+    add: [/usr/local/include]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/include/c++/9.4.0]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/aarch64-unknown-linux-gnu] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/include/c++/9.4.0/aarch64-unknown-linux-gnu]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/backward] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/include/c++/9.4.0/backward]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/include] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/projects/opt/aarch64/rhel8/gcc/9.4.0/include/c++/9.4.0;/projects/opt/aarch64/rhel8/gcc/9.4.0/include/c++/9.4.0/aarch64-unknown-linux-gnu;/projects/opt/aarch64/rhel8/gcc/9.4.0/include/c++/9.4.0/backward;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include;/usr/local/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_7dc32/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7dc32.dir/build.make CMakeFiles/cmTC_7dc32.dir/build]
+  ignore line: [gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++   -v -std=gnu++17 -o CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -c /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++]
+  ignore line: [Target: aarch64-unknown-linux-gnu]
+  ignore line: [Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c c++ fortran lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-std=gnu++17' '-o' 'CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/cc1plus -quiet -v -D_GNU_SOURCE /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -std=gnu++17 -version -o /tmp/ccAn7dhE.s]
+  ignore line: [GNU C++17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)]
+  ignore line: [	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5)  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/aarch64-unknown-linux-gnu]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../include/c++/9.4.0/backward]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)]
+  ignore line: [	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5)  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 5bc963d1c8c50a7c954c8fe4c2eee129]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-std=gnu++17' '-o' 'CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccAn7dhE.s]
+  ignore line: [GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8]
+  ignore line: [COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-std=gnu++17' '-o' 'CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [Linking CXX executable cmTC_7dc32]
+  ignore line: [/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7dc32.dir/link.txt --verbose=1]
+  ignore line: [/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++  -v CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7dc32 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper]
+  ignore line: [Target: aarch64-unknown-linux-gnu]
+  ignore line: [Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c c++ fortran lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7dc32' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvcEfoG.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -o cmTC_7dc32 /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccvcEfoG.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+    arg [-X] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-maarch64linux] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_7dc32] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o] ==> ignore
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0]
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..]
+    arg [CMakeFiles/cmTC_7dc32.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0]
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64;/lib64;/usr/lib64;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test HAVE_OPENMP_SIMD succeeded with the following output:
+Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0f993/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0f993.dir/build.make CMakeFiles/cmTC_0f993.dir/build
+gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f993.dir/src.c.o
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc -DHAVE_OPENMP_SIMD  -fopenmp-simd -o CMakeFiles/cmTC_0f993.dir/src.c.o -c /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0f993
+/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f993.dir/link.txt --verbose=1
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc CMakeFiles/cmTC_0f993.dir/src.c.o -o cmTC_0f993 
+gmake[1]: Leaving directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" succeeded.
+Compiler: /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran 
+Build flags: 
+Id flags: -v 
+
+The output was:
+0
+Driving: /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran -v CMakeFortranCompilerId.F -l gfortran -l m -shared-libgcc
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran
+COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/f951 CMakeFortranCompilerId.F -ffixed-form -cpp=/tmp/cclwXuRf.f90 -quiet -v CMakeFortranCompilerId.F -quiet -dumpbase CMakeFortranCompilerId.F -mlittle-endian -mabi=lp64 -auxbase CMakeFortranCompilerId -version -fintrinsic-modules-path /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude -fpre-include=/usr/include/finclude/math-vector-fortran.h -o /tmp/ccMwBkFl.s
+GNU Fortran (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include
+ /usr/local/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed
+ /usr/include
+End of search list.
+GNU Fortran2008 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ as -v -EL -mabi=lp64 -o /tmp/cc1K7oBt.o /tmp/ccMwBkFl.s
+GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8
+Reading specs from /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/libgfortran.spec
+rename spec lib to liborig
+COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqQSC4A.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. /tmp/cc1K7oBt.o -lgfortran -lm -lgcc_s -lgcc -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+
+
+Compilation of the Fortran compiler identification source "CMakeFortranCompilerId.F" produced "a.out"
+
+The Fortran compiler identification is GNU, found in "/vast/home/stevenw/WKE/CMakeFiles/3.19.2/CompilerIdFortran/a.out"
+
+Detecting Fortran compiler ABI info compiled with the following output:
+Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_184c8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_184c8.dir/build.make CMakeFiles/cmTC_184c8.dir/build
+gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran   -v -c /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/f951 /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeFortranCompilerABI.F -ffixed-form -cpp=/tmp/ccR4dAhm.f90 -quiet -v /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeFortranCompilerABI.F -quiet -dumpbase CMakeFortranCompilerABI.F -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -version -fintrinsic-modules-path /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude -fpre-include=/usr/include/finclude/math-vector-fortran.h -o /tmp/ccg0eyoy.s
+GNU Fortran (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include
+ /usr/local/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/include
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed
+ /usr/include
+End of search list.
+GNU Fortran2008 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)
+	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5), GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o' '-mlittle-endian' '-mabi=lp64'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o /tmp/ccg0eyoy.s
+GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o' '-mlittle-endian' '-mabi=lp64'
+Linking Fortran executable cmTC_184c8
+/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_184c8.dir/link.txt --verbose=1
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran  -v CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -o cmTC_184c8 
+Driving: /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran -v CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -o cmTC_184c8 -l gfortran -l m -shared-libgcc
+Using built-in specs.
+COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran
+COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper
+Target: aarch64-unknown-linux-gnu
+Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c,c++,fortran,lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0
+Thread model: posix
+gcc version 9.4.0 (GCC) 
+Reading specs from /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/libgfortran.spec
+rename spec lib to liborig
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_184c8' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/
+LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_184c8' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmDcPLs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -o cmTC_184c8 /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_184c8' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+gmake[1]: Leaving directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+
+
+
+Parsed Fortran implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+    add: [/usr/local/include]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+    add: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/include] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+  collapse include dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include;/usr/local/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed;/usr/include]
+
+
+Parsed Fortran implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_184c8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_184c8.dir/build.make CMakeFiles/cmTC_184c8.dir/build]
+  ignore line: [gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp']
+  ignore line: [Building Fortran object CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran   -v -c /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran]
+  ignore line: [Target: aarch64-unknown-linux-gnu]
+  ignore line: [Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c c++ fortran lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/f951 /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeFortranCompilerABI.F -ffixed-form -cpp=/tmp/ccR4dAhm.f90 -quiet -v /projects/opt/aarch64/rhel8/cmake/3.19.2/share/cmake-3.19/Modules/CMakeFortranCompilerABI.F -quiet -dumpbase CMakeFortranCompilerABI.F -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -version -fintrinsic-modules-path /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude -fpre-include=/usr/include/finclude/math-vector-fortran.h -o /tmp/ccg0eyoy.s]
+  ignore line: [GNU Fortran (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)]
+  ignore line: [	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5)  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../aarch64-unknown-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/include]
+  ignore line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU Fortran2008 (GCC) version 9.4.0 (aarch64-unknown-linux-gnu)]
+  ignore line: [	compiled by GNU C version 8.3.1 20191121 (Red Hat 8.3.1-5)  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o /tmp/ccg0eyoy.s]
+  ignore line: [GNU assembler version 2.30 (aarch64-redhat-linux) using BFD version version 2.30-79.el8]
+  ignore line: [COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [Linking Fortran executable cmTC_184c8]
+  ignore line: [/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_184c8.dir/link.txt --verbose=1]
+  ignore line: [/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran  -v CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -o cmTC_184c8 ]
+  ignore line: [Driving: /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran -v CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -o cmTC_184c8 -l gfortran -l m -shared-libgcc]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran]
+  ignore line: [COLLECT_LTO_WRAPPER=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper]
+  ignore line: [Target: aarch64-unknown-linux-gnu]
+  ignore line: [Configured with: ../gcc-9.4.0/configure --disable-bootstrap --disable-multilib --enable-languages=c c++ fortran lto --prefix=/projects/opt/aarch64/rhel8/gcc/9.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (GCC) ]
+  ignore line: [Reading specs from /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/libgfortran.spec]
+  ignore line: [rename spec lib to liborig]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_184c8' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [COMPILER_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_184c8' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2 -plugin /projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmDcPLs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -o cmTC_184c8 /lib/../lib64/crt1.o /lib/../lib64/crti.o /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../.. CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/projects/opt/aarch64/rhel8/gcc/9.4.0/libexec/gcc/aarch64-unknown-linux-gnu/9.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccmDcPLs.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+    arg [-X] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-maarch64linux] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_184c8] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtbegin.o] ==> ignore
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0]
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..] ==> dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..]
+    arg [CMakeFiles/cmTC_184c8.dir/CMakeFortranCompilerABI.F.o] ==> ignore
+    arg [-lgfortran] ==> lib [gfortran]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0]
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../../../lib64] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/../../..] ==> [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib]
+  implicit libs: [gfortran;m;gcc_s;gcc;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64;/lib64;/usr/lib64;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib]
+  implicit fwks: []
+
+
+Determining if the Fortran compiler supports Fortran 90 passed with the following output:
+Change Dir: /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b7376/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b7376.dir/build.make CMakeFiles/cmTC_b7376.dir/build
+gmake[1]: Entering directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_b7376.dir/testFortranCompilerF90.f90.o
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran    -c /vast/home/stevenw/WKE/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTC_b7376.dir/testFortranCompilerF90.f90.o
+Linking Fortran executable cmTC_b7376
+/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7376.dir/link.txt --verbose=1
+/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran CMakeFiles/cmTC_b7376.dir/testFortranCompilerF90.f90.o -o cmTC_b7376 
+gmake[1]: Leaving directory '/vast/home/stevenw/WKE/CMakeFiles/CMakeTmp'
+
+
+

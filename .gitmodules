@@ -1,0 +1,3 @@
+[submodule "MATAR"]
+	path = MATAR
+	url = git@github.com:steven-t-walton/MATAR.git
