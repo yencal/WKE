@@ -469,12 +469,18 @@ crt/host_defines.h
 /vast/home/stevenw/WKE/3wke/3wke.cpp
 matar.h
 /vast/home/stevenw/WKE/3wke/matar.h
+state.h
+/vast/home/stevenw/WKE/3wke/state.h
 stdio.h
 -
 math.h
 -
 chrono
 -
+
+/vast/home/stevenw/WKE/3wke/state.h
+matar.h
+/vast/home/stevenw/WKE/3wke/matar.h
 
 MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_Atomic_Intrinsics.hpp
 Kokkos_Macros.hpp

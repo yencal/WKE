@@ -1,21 +1,9 @@
-// -----------------------------------------------------------------------------
-//
-//
-//    To run the code with e.g., 4 threads, type
-//      ./executable --kokkos-threads=4
-//
-//    openMP settings:
-//      setenv OMP_PROC_BIND true
-//      setenv OMP_PROC_BIND spread
-//      setenv OMP_PLACES threads
-//      setenv OMP_NUM_THREADS 2
-// -----------------------------------------------------------------------------
-
 #include "matar.h"
+#include "state.h"
 #include <stdio.h>
 #include <math.h>  // c math lib
 #include <chrono>
-
+using namespace mtr;
 
 // -----------------------------------------------------------------------------
 //    Global variables
@@ -135,8 +123,6 @@ int main(int argc, char* argv[]){
 
         
         RUN ({
-            node_mass(0) = corner_mass(0);
-            node_mass(num_nodes-1) = corner_mass(num_corners-1);
             
             node_energy(0) = 0.0;
             node_energy(num_nodes-1) = 0.0;
@@ -162,7 +148,7 @@ int main(int argc, char* argv[]){
         for (int cell_id=0; cell_id<num_cells; cell_id++){
         fprintf( myfile,"%f\t%f\t%f\t%f\t%f\n",
                  cell_coords.host(cell_id),
-                 node_vel.host(cell_id) );
+                 node_energy_n.host(cell_id) );
         }
         fclose(myfile);
         
@@ -186,14 +172,14 @@ int main(int argc, char* argv[]){
                 double dx_lcl = node_coords(cell_id+1) - node_coords(cell_id);
                 
                 // local dt calc
-                double dt_lcl_ = dt_cfl*dx_lcl/(cell_sspd(cell_id) + fuzz);
+                double dt_lcl_ = dt_cfl;//*dx_lcl/(cell_sspd(cell_id) + fuzz);
                 
                 // make dt be in bounds
                 dt_lcl_ = fmin(dt_lcl_, dt_max);
                 dt_lcl_ = fmin(dt_lcl_, time_max-time);
                 dt_lcl_ = fmin(dt_lcl_, dt_ceiling);
         
-                if (dt_lcl_ < dt_lcl) dt_lcl = dt_lcl_;
+                if (dt_lcl_ < dt_lcl) dt_lcl = dt;//_lcl_;
                         
             }, min_dt_calc); // end parallel reduction on min
             Kokkos::fence();
@@ -222,7 +208,6 @@ int main(int argc, char* argv[]){
                     // nodal state
                     FOR_ALL (node_id, 0, num_nodes, {
                           node_energy_n(node_id)    = node_energy(node_id);
-                          //node_coords_n(node_id) = node_coords(node_id);
                     }); // end parallel for on device
                     
                     
@@ -242,7 +227,7 @@ int main(int argc, char* argv[]){
                     
                     // update velocity
                     node_energy(node_id) = node_energy_n(node_id) -
-                                rk_alpha*dt/node_mass(node_id)*sum_node_res(node_id);
+                                rk_alpha*dt;//node_mass(node_id)*sum_node_res(node_id);
                     
                 }); // end parallel for on device
 

@@ -64,6 +64,7 @@
 3wke/CMakeFiles/3wke.dir/3wke.cpp.o: /projects/darwin-nv/rhel8/aarch64/packages/cuda/11.4.0/include/vector_functions.hpp
 3wke/CMakeFiles/3wke.dir/3wke.cpp.o: /projects/darwin-nv/rhel8/aarch64/packages/cuda/11.4.0/include/vector_types.h
 3wke/CMakeFiles/3wke.dir/3wke.cpp.o: 3wke/3wke.cpp
+3wke/CMakeFiles/3wke.dir/3wke.cpp.o: 3wke/state.h
 3wke/CMakeFiles/3wke.dir/3wke.cpp.o: MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_Atomic_Intrinsics.hpp
 3wke/CMakeFiles/3wke.dir/3wke.cpp.o: MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_Atomic_Intrinsics_Restore_Builtins.hpp
 3wke/CMakeFiles/3wke.dir/3wke.cpp.o: MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_BlockSize_Deduction.hpp

@@ -65,6 +65,7 @@
  /projects/darwin-nv/rhel8/aarch64/packages/cuda/11.4.0/include/vector_functions.hpp
  /projects/darwin-nv/rhel8/aarch64/packages/cuda/11.4.0/include/vector_types.h
  /vast/home/stevenw/WKE/3wke/3wke.cpp
+ /vast/home/stevenw/WKE/3wke/state.h
  MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_Atomic_Intrinsics.hpp
  MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_Atomic_Intrinsics_Restore_Builtins.hpp
  MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_BlockSize_Deduction.hpp
