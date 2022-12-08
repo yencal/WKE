@@ -24,11 +24,7 @@ struct region_t{
 // -----------------------------------------------------------------------------
 //    Functions
 // -----------------------------------------------------------------------------
-KOKKOS_INLINE_FUNCTION
-int get_corners_in_cell(int,int);
 
-KOKKOS_INLINE_FUNCTION
-int get_corners_in_node(int,int);
 
 
 // -----------------------------------------------------------------------------
@@ -56,78 +52,61 @@ int main(int argc, char* argv[]){
 
     // -------------------------------
     
-    printf("\nstarting FE code\n");
+    printf("\nstarting code\n");
     
     FILE * myfile;
     
-    // This is the meat in the code, it must be inside Kokkos scope
     Kokkos::initialize(argc, argv);
     {
-        
-        // 1D linear element int( -Grad(phi) dot J^{-1}j )
-        //const double integral_grad_basis[2] = {1.0, -1.0};
         
         // calculate mesh information based on inputs
         const int num_nodes = num_cells+1;
         double dp = (p_max-p_min)/num_cells;
         
-        // initialize the time to zero
+	node_t node;
+	elem_t elem;
+
+	// initialize the time to zero
         double time = 0.0;
     
-        // --- setup variables based on user inputs ---
-        
-        // nodal variables
-        DCArrayKokkos <double> node_energy(num_nodes);    // energy = \omega(p)f(t,p) = g(t,p)
-        DCArrayKokkos <double> node_energy_n(num_nodes);  // energy at  t_n
-        DCArrayKokkos <double> node_residual(num_nodes);          
-
-	// mesh variables
-        DCArrayKokkos <double> cell_coords(num_cells);   // coordinates of cell
-        DCArrayKokkos <double> cell_length(num_cells);   // length of the cell
-        
-        DCArrayKokkos <double> node_coords(num_nodes);   // coordinates of nodes
-        DCArrayKokkos <double> node_coords_n(num_nodes); // coordinates at t_n
-        
-        // --- build the mesh ---
-        
         // calculate nodal coordinates of the mesh
         FOR_ALL (node_id, 0, num_nodes, {
-           node_coords(node_id) = double(node_id) * dp;
+           node.coords(node_id) = double(node_id) * dp;
         }); // end parallel for on device
 
         
         
         // calculate cell center coordinates of the mesh
         FOR_ALL (cell_id, 0, num_cells, {
-            cell_coords(cell_id) =
-                           0.5*(node_coords(cell_id) + node_coords(cell_id+1));
+            elem.coords(cell_id) =
+                           0.5*(node.coords(cell_id) + node.coords(cell_id+1));
             
-            cell_length(cell_id)  = node_coords(cell_id+1) - node_coords(cell_id);
+            elem.length(cell_id)  = node.coords(cell_id+1) - node.coords(cell_id);
         }); // end parallel for on device
 
         
         // intialize the nodal state that is internal to the mesh
         FOR_ALL (node_id, 1, num_nodes-1, {
-            node_energy(node_id) = 0.0;// initialize energy at n+1
-	    node_energy_n(node_id) = 0.0;// initialize energy at n
+            node.energy(1,node_id) = 0.0;// initialize energy at n+1
+	    node.energy(0,node_id) = 0.0;// initialize energy at n
 
 	    // set IC //
-	    if ( p_min <= node_coords(node_id) and node_coords(node_id) <= 100){
-              node_energy_n(node_id) = node_coords(node_id)*(33.33-node_coords(node_id))*(33.33-node_coords(node_id))*(100-node_coords(node_id));// a little energy at lower modes and more energy at higher modes  
-	      node_energy_n(node_id) = node_energy_n(node_id)/129629629.629; // normalize
+	    if ( p_min <= node.coords(node_id) and node.coords(node_id) <= 100){
+              node.energy(0,node_id) = node.coords(node_id)*(33.33-node.coords(node_id))*(33.33-node.coords(node_id))*(100-node.coords(node_id));// a little energy at lower modes and more energy at higher modes  
+	      node.energy(0,node_id) = node.energy(0,node_id)/129629629.629; // normalize
 	    }
-	    else if ( 100 < node_coords(node_id) ){
-	      node_energy_n(node_id) = 0.0;
+	    else if ( 100 < node.coords(node_id) ){
+	      node.energy(0,node_id) = 0.0;
 	    }
         }); // end parallel for on device
 
         
         RUN ({
             
-            node_energy(0) = 0.0;
-            node_energy(num_nodes-1) = 0.0;
-            node_energy_n(0) = 0.0;
-            node_energy_n(num_nodes-1) = 0.0;
+            node.energy(1,0) = 0.0;
+            node.energy(1,num_nodes-1) = 0.0;
+            node.energy(0,0) = 0.0;
+            node.energy(0,num_nodes-1) = 0.0;
 
         }); // end run once on the device
         
@@ -138,7 +117,7 @@ int main(int argc, char* argv[]){
         // -------------------------------
         
         // update the host side to print (i.e., copy from device to host)
-        node_energy_n.update_host();
+        node.energy.update_host();
         
         // write out the intial conditions to a file on the host
         myfile=fopen("time0.txt","w");
@@ -147,8 +126,8 @@ int main(int argc, char* argv[]){
         // write data on the host side
         for (int cell_id=0; cell_id<num_cells; cell_id++){
         fprintf( myfile,"%f\t%f\t%f\t%f\t%f\n",
-                 cell_coords.host(cell_id),
-                 node_energy_n.host(cell_id) );
+                 elem.coords.host(cell_id),
+                 node.energy.host(0,cell_id) );
         }
         fclose(myfile);
         
@@ -169,7 +148,7 @@ int main(int argc, char* argv[]){
             double min_dt_calc;
             REDUCE_MIN(cell_id, 0, num_cells, dt_lcl, {
                 // mesh size
-                double dx_lcl = node_coords(cell_id+1) - node_coords(cell_id);
+                double dx_lcl = node.coords(cell_id+1) - node.coords(cell_id);
                 
                 // local dt calc
                 double dt_lcl_ = dt_cfl;//*dx_lcl/(cell_sspd(cell_id) + fuzz);
@@ -207,7 +186,7 @@ int main(int argc, char* argv[]){
                     
                     // nodal state
                     FOR_ALL (node_id, 0, num_nodes, {
-                          node_energy_n(node_id)    = node_energy(node_id);
+                          node.energy(0, node_id)  = node.energy(1, node_id);
                     }); // end parallel for on device
                     
                     
@@ -226,7 +205,7 @@ int main(int argc, char* argv[]){
                 FOR_ALL (node_id, 0, num_nodes-1, {
                     
                     // update velocity
-                    node_energy(node_id) = node_energy_n(node_id) -
+                    node.energy(1,node_id) = node.energy(0,node_id) -
                                 rk_alpha*dt;//node_mass(node_id)*sum_node_res(node_id);
                     
                 }); // end parallel for on device
@@ -254,8 +233,8 @@ int main(int argc, char* argv[]){
         // -------------------------------
         
         // update the host side to print (i.e., copy from device to host)
-        cell_coords.update_host();
-        node_energy.update_host();
+        elem.coords.update_host();
+        node.energy.update_host();
         
         // write out the intial conditions to a file on the host
         myfile=fopen("timeEnd.txt","w");
@@ -264,8 +243,8 @@ int main(int argc, char* argv[]){
         // write data on the host side
         for (int cell_id=0; cell_id<num_cells; cell_id++){
            fprintf( myfile,"%f\t%f\t%f\t%f\t%f\n",
-                    cell_coords.host(cell_id),
-                    node_energy.host(cell_id) );
+                    elem.coords.host(cell_id),
+                    node.energy.host(cell_id) );
         }
         fclose(myfile);
         
@@ -282,20 +261,6 @@ int main(int argc, char* argv[]){
     return 0;
   
 } // end main function
-
-
-
-KOKKOS_INLINE_FUNCTION
-int get_corners_in_cell(int cell_gid, int corner_lid){
-    // corner_lid is 0 to 1
-    return (2*cell_gid + corner_lid);
-}
-
-KOKKOS_INLINE_FUNCTION
-int get_corners_in_node(int node_gid, int corner_lid){
-    // corner_lid is 0 to 1
-    return (2*node_gid - 1 + corner_lid);
-}
 
 
 
