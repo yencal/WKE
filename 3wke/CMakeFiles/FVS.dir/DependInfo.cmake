@@ -4,13 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/vast/home/stevenw/WKE/3wke/1d.cpp" "/vast/home/stevenw/WKE/3wke/CMakeFiles/3wke.dir/1d.cpp.o"
+  "/vast/home/stevenw/WKE/3wke/3wke_FVS.cpp" "/vast/home/stevenw/WKE/3wke/CMakeFiles/FVS.dir/3wke_FVS.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "HAVE_CUDA=1"
   "HAVE_KOKKOS=1"
   "KOKKOS_DEPENDENCE"
   )
@@ -19,8 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "MATAR/src"
   "3wke"
-  "MATAR/src/install-kokkos-cuda/kokkos/include"
-  "/projects/darwin-nv/rhel8/aarch64/packages/cuda/11.4.0/include"
+  "MATAR/src/install-kokkos-pthreads/kokkos/include"
   )
 
 # Targets to which this target links.

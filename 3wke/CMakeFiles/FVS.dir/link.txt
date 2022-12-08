@@ -1,0 +1,1 @@
+/projects/opt/ppc64le/p9/gcc/9.4.0/bin/g++ -DKOKKOS_DEPENDENCE CMakeFiles/FVS.dir/3wke_FVS.cpp.o -o FVS  ../MATAR/build-kokkos-pthreads/src/libmatar.a ../MATAR/src/install-kokkos-pthreads/kokkos/lib64/libkokkoscontainers.a ../MATAR/src/install-kokkos-pthreads/kokkos/lib64/libkokkoscore.a -ldl -lpthread ../MATAR/src/install-kokkos-pthreads/kokkos/lib64/libkokkossimd.a 

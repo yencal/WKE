@@ -58,10 +58,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake
+CMAKE_COMMAND = /projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake
 
 # The command to remove a file.
-RM = /projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E rm -f
+RM = /projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /vast/home/stevenw/WKE
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -169,6 +169,19 @@ test_shared_ptr/fast:
 .PHONY : test_shared_ptr/fast
 
 #=============================================================================
+# Target rules for targets named test_for
+
+# Build rule for target.
+test_for: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_for
+.PHONY : test_for
+
+# fast build rule for target.
+test_for/fast:
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/test_for.dir/build.make MATAR/examples/CMakeFiles/test_for.dir/build
+.PHONY : test_for/fast
+
+#=============================================================================
 # Target rules for targets named mtest
 
 # Build rule for target.
@@ -182,17 +195,30 @@ mtest/fast:
 .PHONY : mtest/fast
 
 #=============================================================================
-# Target rules for targets named test_for
+# Target rules for targets named farray_wrong
 
 # Build rule for target.
-test_for: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_for
-.PHONY : test_for
+farray_wrong: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 farray_wrong
+.PHONY : farray_wrong
 
 # fast build rule for target.
-test_for/fast:
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/test_for.dir/build.make MATAR/examples/CMakeFiles/test_for.dir/build
-.PHONY : test_for/fast
+farray_wrong/fast:
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build
+.PHONY : farray_wrong/fast
+
+#=============================================================================
+# Target rules for targets named farray_right
+
+# Build rule for target.
+farray_right: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 farray_right
+.PHONY : farray_right
+
+# fast build rule for target.
+farray_right/fast:
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/build
+.PHONY : farray_right/fast
 
 #=============================================================================
 # Target rules for targets named carray_wrong
@@ -221,32 +247,6 @@ carray_right/fast:
 .PHONY : carray_right/fast
 
 #=============================================================================
-# Target rules for targets named farray_right
-
-# Build rule for target.
-farray_right: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 farray_right
-.PHONY : farray_right
-
-# fast build rule for target.
-farray_right/fast:
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/build
-.PHONY : farray_right/fast
-
-#=============================================================================
-# Target rules for targets named farray_wrong
-
-# Build rule for target.
-farray_wrong: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 farray_wrong
-.PHONY : farray_wrong
-
-# fast build rule for target.
-farray_wrong/fast:
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build
-.PHONY : farray_wrong/fast
-
-#=============================================================================
 # Target rules for targets named test_floyd
 
 # Build rule for target.
@@ -260,17 +260,30 @@ test_floyd/fast:
 .PHONY : test_floyd/fast
 
 #=============================================================================
-# Target rules for targets named 3wke
+# Target rules for targets named RD
 
 # Build rule for target.
-3wke: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke
-.PHONY : 3wke
+RD: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RD
+.PHONY : RD
 
 # fast build rule for target.
-3wke/fast:
-	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/build
-.PHONY : 3wke/fast
+RD/fast:
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/build
+.PHONY : RD/fast
+
+#=============================================================================
+# Target rules for targets named FVS
+
+# Build rule for target.
+FVS: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FVS
+.PHONY : FVS
+
+# fast build rule for target.
+FVS/fast:
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/build
+.PHONY : FVS/fast
 
 # Help Target
 help:
@@ -281,7 +294,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... distclean"
-	@echo "... 3wke"
+	@echo "... FVS"
+	@echo "... RD"
 	@echo "... carray_right"
 	@echo "... carray_wrong"
 	@echo "... farray_right"

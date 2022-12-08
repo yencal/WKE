@@ -58,10 +58,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake
+CMAKE_COMMAND = /projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake
 
 # The command to remove a file.
-RM = /projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E rm -f
+RM = /projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -75,27 +75,27 @@ CMAKE_BINARY_DIR = /vast/home/stevenw/WKE
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/projects/opt/aarch64/rhel8/cmake/3.19.2/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,46 +130,88 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-3wke/CMakeFiles/3wke.dir/rule:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke/CMakeFiles/3wke.dir/rule
-.PHONY : 3wke/CMakeFiles/3wke.dir/rule
+3wke/CMakeFiles/RD.dir/rule:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke/CMakeFiles/RD.dir/rule
+.PHONY : 3wke/CMakeFiles/RD.dir/rule
 
 # Convenience name for target.
-3wke: 3wke/CMakeFiles/3wke.dir/rule
+RD: 3wke/CMakeFiles/RD.dir/rule
 
-.PHONY : 3wke
+.PHONY : RD
 
 # fast build rule for target.
-3wke/fast:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/build
-.PHONY : 3wke/fast
+RD/fast:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/build
+.PHONY : RD/fast
 
-1d.o: 1d.cpp.o
+# Convenience name for target.
+3wke/CMakeFiles/FVS.dir/rule:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke/CMakeFiles/FVS.dir/rule
+.PHONY : 3wke/CMakeFiles/FVS.dir/rule
 
-.PHONY : 1d.o
+# Convenience name for target.
+FVS: 3wke/CMakeFiles/FVS.dir/rule
+
+.PHONY : FVS
+
+# fast build rule for target.
+FVS/fast:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/build
+.PHONY : FVS/fast
+
+3wke_FVS.o: 3wke_FVS.cpp.o
+
+.PHONY : 3wke_FVS.o
 
 # target to build an object file
-1d.cpp.o:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/1d.cpp.o
-.PHONY : 1d.cpp.o
+3wke_FVS.cpp.o:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/3wke_FVS.cpp.o
+.PHONY : 3wke_FVS.cpp.o
 
-1d.i: 1d.cpp.i
+3wke_FVS.i: 3wke_FVS.cpp.i
 
-.PHONY : 1d.i
+.PHONY : 3wke_FVS.i
 
 # target to preprocess a source file
-1d.cpp.i:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/1d.cpp.i
-.PHONY : 1d.cpp.i
+3wke_FVS.cpp.i:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/3wke_FVS.cpp.i
+.PHONY : 3wke_FVS.cpp.i
 
-1d.s: 1d.cpp.s
+3wke_FVS.s: 3wke_FVS.cpp.s
 
-.PHONY : 1d.s
+.PHONY : 3wke_FVS.s
 
 # target to generate assembly for a file
-1d.cpp.s:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/1d.cpp.s
-.PHONY : 1d.cpp.s
+3wke_FVS.cpp.s:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/3wke_FVS.cpp.s
+.PHONY : 3wke_FVS.cpp.s
+
+RD.o: RD.cpp.o
+
+.PHONY : RD.o
+
+# target to build an object file
+RD.cpp.o:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/RD.cpp.o
+.PHONY : RD.cpp.o
+
+RD.i: RD.cpp.i
+
+.PHONY : RD.i
+
+# target to preprocess a source file
+RD.cpp.i:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/RD.cpp.i
+.PHONY : RD.cpp.i
+
+RD.s: RD.cpp.s
+
+.PHONY : RD.s
+
+# target to generate assembly for a file
+RD.cpp.s:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/RD.cpp.s
+.PHONY : RD.cpp.s
 
 # Help Target
 help:
@@ -179,10 +221,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 3wke"
-	@echo "... 1d.o"
-	@echo "... 1d.i"
-	@echo "... 1d.s"
+	@echo "... FVS"
+	@echo "... RD"
+	@echo "... 3wke_FVS.o"
+	@echo "... 3wke_FVS.i"
+	@echo "... 3wke_FVS.s"
+	@echo "... RD.o"
+	@echo "... RD.i"
+	@echo "... RD.s"
 .PHONY : help
 
 

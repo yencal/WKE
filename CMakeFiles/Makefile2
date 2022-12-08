@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake
+CMAKE_COMMAND = /projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake
 
 # The command to remove a file.
-RM = /projects/opt/aarch64/rhel8/cmake/3.19.2/bin/cmake -E rm -f
+RM = /projects/opt/rhel7/ppc64le/cmake/3.19.2/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -93,7 +93,8 @@ clean: 3wke/clean
 # Directory level rules for directory 3wke
 
 # Recursive "all" directory target.
-3wke/all: 3wke/CMakeFiles/3wke.dir/all
+3wke/all: 3wke/CMakeFiles/RD.dir/all
+3wke/all: 3wke/CMakeFiles/FVS.dir/all
 
 .PHONY : 3wke/all
 
@@ -103,7 +104,8 @@ clean: 3wke/clean
 .PHONY : 3wke/preinstall
 
 # Recursive "clean" directory target.
-3wke/clean: 3wke/CMakeFiles/3wke.dir/clean
+3wke/clean: 3wke/CMakeFiles/RD.dir/clean
+3wke/clean: 3wke/CMakeFiles/FVS.dir/clean
 
 .PHONY : 3wke/clean
 
@@ -134,8 +136,8 @@ MATAR/clean: MATAR/examples/clean
 
 # Recursive "all" directory target.
 MATAR/examples/all: MATAR/examples/CMakeFiles/test_shared_ptr.dir/all
-MATAR/examples/all: MATAR/examples/CMakeFiles/mtest.dir/all
 MATAR/examples/all: MATAR/examples/CMakeFiles/test_for.dir/all
+MATAR/examples/all: MATAR/examples/CMakeFiles/mtest.dir/all
 MATAR/examples/all: MATAR/examples/virtualFcnKokkos/all
 MATAR/examples/all: MATAR/examples/laplace/all
 MATAR/examples/all: MATAR/examples/halfspace_cooling/all
@@ -159,8 +161,8 @@ MATAR/examples/preinstall: MATAR/examples/test_rocm/preinstall
 
 # Recursive "clean" directory target.
 MATAR/examples/clean: MATAR/examples/CMakeFiles/test_shared_ptr.dir/clean
-MATAR/examples/clean: MATAR/examples/CMakeFiles/mtest.dir/clean
 MATAR/examples/clean: MATAR/examples/CMakeFiles/test_for.dir/clean
+MATAR/examples/clean: MATAR/examples/CMakeFiles/mtest.dir/clean
 MATAR/examples/clean: MATAR/examples/virtualFcnKokkos/clean
 MATAR/examples/clean: MATAR/examples/laplace/clean
 MATAR/examples/clean: MATAR/examples/halfspace_cooling/clean
@@ -193,10 +195,10 @@ MATAR/examples/halfspace_cooling/clean:
 # Directory level rules for directory MATAR/examples/laplace
 
 # Recursive "all" directory target.
+MATAR/examples/laplace/all: MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all
+MATAR/examples/laplace/all: MATAR/examples/laplace/CMakeFiles/farray_right.dir/all
 MATAR/examples/laplace/all: MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/all
 MATAR/examples/laplace/all: MATAR/examples/laplace/CMakeFiles/carray_right.dir/all
-MATAR/examples/laplace/all: MATAR/examples/laplace/CMakeFiles/farray_right.dir/all
-MATAR/examples/laplace/all: MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all
 
 .PHONY : MATAR/examples/laplace/all
 
@@ -206,10 +208,10 @@ MATAR/examples/laplace/preinstall:
 .PHONY : MATAR/examples/laplace/preinstall
 
 # Recursive "clean" directory target.
+MATAR/examples/laplace/clean: MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean
+MATAR/examples/laplace/clean: MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean
 MATAR/examples/laplace/clean: MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/clean
 MATAR/examples/laplace/clean: MATAR/examples/laplace/CMakeFiles/carray_right.dir/clean
-MATAR/examples/laplace/clean: MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean
-MATAR/examples/laplace/clean: MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean
 
 .PHONY : MATAR/examples/laplace/clean
 
@@ -355,7 +357,7 @@ MATAR/CMakeFiles/distclean.dir/clean:
 MATAR/src/CMakeFiles/matar.dir/all:
 	$(MAKE) $(MAKESILENT) -f MATAR/src/CMakeFiles/matar.dir/build.make MATAR/src/CMakeFiles/matar.dir/depend
 	$(MAKE) $(MAKESILENT) -f MATAR/src/CMakeFiles/matar.dir/build.make MATAR/src/CMakeFiles/matar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=11,12 "Built target matar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=13,14 "Built target matar"
 .PHONY : MATAR/src/CMakeFiles/matar.dir/all
 
 # Build rule for subdir invocation for target.
@@ -382,7 +384,7 @@ MATAR/src/CMakeFiles/matar.dir/clean:
 MATAR/examples/CMakeFiles/test_shared_ptr.dir/all: MATAR/src/CMakeFiles/matar.dir/all
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/test_shared_ptr.dir/build.make MATAR/examples/CMakeFiles/test_shared_ptr.dir/depend
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/test_shared_ptr.dir/build.make MATAR/examples/CMakeFiles/test_shared_ptr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=19,20 "Built target test_shared_ptr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=21,22 "Built target test_shared_ptr"
 .PHONY : MATAR/examples/CMakeFiles/test_shared_ptr.dir/all
 
 # Build rule for subdir invocation for target.
@@ -403,40 +405,13 @@ MATAR/examples/CMakeFiles/test_shared_ptr.dir/clean:
 .PHONY : MATAR/examples/CMakeFiles/test_shared_ptr.dir/clean
 
 #=============================================================================
-# Target rules for target MATAR/examples/CMakeFiles/mtest.dir
-
-# All Build rule for target.
-MATAR/examples/CMakeFiles/mtest.dir/all: MATAR/src/CMakeFiles/matar.dir/all
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/mtest.dir/build.make MATAR/examples/CMakeFiles/mtest.dir/depend
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/mtest.dir/build.make MATAR/examples/CMakeFiles/mtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=13,14 "Built target mtest"
-.PHONY : MATAR/examples/CMakeFiles/mtest.dir/all
-
-# Build rule for subdir invocation for target.
-MATAR/examples/CMakeFiles/mtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MATAR/examples/CMakeFiles/mtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
-.PHONY : MATAR/examples/CMakeFiles/mtest.dir/rule
-
-# Convenience name for target.
-mtest: MATAR/examples/CMakeFiles/mtest.dir/rule
-
-.PHONY : mtest
-
-# clean rule for target.
-MATAR/examples/CMakeFiles/mtest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/mtest.dir/build.make MATAR/examples/CMakeFiles/mtest.dir/clean
-.PHONY : MATAR/examples/CMakeFiles/mtest.dir/clean
-
-#=============================================================================
 # Target rules for target MATAR/examples/CMakeFiles/test_for.dir
 
 # All Build rule for target.
 MATAR/examples/CMakeFiles/test_for.dir/all: MATAR/src/CMakeFiles/matar.dir/all
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/test_for.dir/build.make MATAR/examples/CMakeFiles/test_for.dir/depend
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/test_for.dir/build.make MATAR/examples/CMakeFiles/test_for.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=17,18 "Built target test_for"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=19,20 "Built target test_for"
 .PHONY : MATAR/examples/CMakeFiles/test_for.dir/all
 
 # Build rule for subdir invocation for target.
@@ -457,13 +432,94 @@ MATAR/examples/CMakeFiles/test_for.dir/clean:
 .PHONY : MATAR/examples/CMakeFiles/test_for.dir/clean
 
 #=============================================================================
+# Target rules for target MATAR/examples/CMakeFiles/mtest.dir
+
+# All Build rule for target.
+MATAR/examples/CMakeFiles/mtest.dir/all: MATAR/src/CMakeFiles/matar.dir/all
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/mtest.dir/build.make MATAR/examples/CMakeFiles/mtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/mtest.dir/build.make MATAR/examples/CMakeFiles/mtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=15,16 "Built target mtest"
+.PHONY : MATAR/examples/CMakeFiles/mtest.dir/all
+
+# Build rule for subdir invocation for target.
+MATAR/examples/CMakeFiles/mtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MATAR/examples/CMakeFiles/mtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
+.PHONY : MATAR/examples/CMakeFiles/mtest.dir/rule
+
+# Convenience name for target.
+mtest: MATAR/examples/CMakeFiles/mtest.dir/rule
+
+.PHONY : mtest
+
+# clean rule for target.
+MATAR/examples/CMakeFiles/mtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/CMakeFiles/mtest.dir/build.make MATAR/examples/CMakeFiles/mtest.dir/clean
+.PHONY : MATAR/examples/CMakeFiles/mtest.dir/clean
+
+#=============================================================================
+# Target rules for target MATAR/examples/laplace/CMakeFiles/farray_wrong.dir
+
+# All Build rule for target.
+MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all: MATAR/src/CMakeFiles/matar.dir/all
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/depend
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=11,12 "Built target farray_wrong"
+.PHONY : MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all
+
+# Build rule for subdir invocation for target.
+MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
+.PHONY : MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/rule
+
+# Convenience name for target.
+farray_wrong: MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/rule
+
+.PHONY : farray_wrong
+
+# clean rule for target.
+MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean:
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean
+.PHONY : MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean
+
+#=============================================================================
+# Target rules for target MATAR/examples/laplace/CMakeFiles/farray_right.dir
+
+# All Build rule for target.
+MATAR/examples/laplace/CMakeFiles/farray_right.dir/all: MATAR/src/CMakeFiles/matar.dir/all
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/depend
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=9,10 "Built target farray_right"
+.PHONY : MATAR/examples/laplace/CMakeFiles/farray_right.dir/all
+
+# Build rule for subdir invocation for target.
+MATAR/examples/laplace/CMakeFiles/farray_right.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MATAR/examples/laplace/CMakeFiles/farray_right.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
+.PHONY : MATAR/examples/laplace/CMakeFiles/farray_right.dir/rule
+
+# Convenience name for target.
+farray_right: MATAR/examples/laplace/CMakeFiles/farray_right.dir/rule
+
+.PHONY : farray_right
+
+# clean rule for target.
+MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean:
+	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean
+.PHONY : MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean
+
+#=============================================================================
 # Target rules for target MATAR/examples/laplace/CMakeFiles/carray_wrong.dir
 
 # All Build rule for target.
 MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/all: MATAR/src/CMakeFiles/matar.dir/all
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/depend
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=5,6 "Built target carray_wrong"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=7,8 "Built target carray_wrong"
 .PHONY : MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/all
 
 # Build rule for subdir invocation for target.
@@ -490,7 +546,7 @@ MATAR/examples/laplace/CMakeFiles/carray_wrong.dir/clean:
 MATAR/examples/laplace/CMakeFiles/carray_right.dir/all: MATAR/src/CMakeFiles/matar.dir/all
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/carray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/carray_right.dir/depend
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/carray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/carray_right.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=3,4 "Built target carray_right"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=5,6 "Built target carray_right"
 .PHONY : MATAR/examples/laplace/CMakeFiles/carray_right.dir/all
 
 # Build rule for subdir invocation for target.
@@ -511,67 +567,13 @@ MATAR/examples/laplace/CMakeFiles/carray_right.dir/clean:
 .PHONY : MATAR/examples/laplace/CMakeFiles/carray_right.dir/clean
 
 #=============================================================================
-# Target rules for target MATAR/examples/laplace/CMakeFiles/farray_right.dir
-
-# All Build rule for target.
-MATAR/examples/laplace/CMakeFiles/farray_right.dir/all: MATAR/src/CMakeFiles/matar.dir/all
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/depend
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=7,8 "Built target farray_right"
-.PHONY : MATAR/examples/laplace/CMakeFiles/farray_right.dir/all
-
-# Build rule for subdir invocation for target.
-MATAR/examples/laplace/CMakeFiles/farray_right.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MATAR/examples/laplace/CMakeFiles/farray_right.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
-.PHONY : MATAR/examples/laplace/CMakeFiles/farray_right.dir/rule
-
-# Convenience name for target.
-farray_right: MATAR/examples/laplace/CMakeFiles/farray_right.dir/rule
-
-.PHONY : farray_right
-
-# clean rule for target.
-MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean:
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_right.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean
-.PHONY : MATAR/examples/laplace/CMakeFiles/farray_right.dir/clean
-
-#=============================================================================
-# Target rules for target MATAR/examples/laplace/CMakeFiles/farray_wrong.dir
-
-# All Build rule for target.
-MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all: MATAR/src/CMakeFiles/matar.dir/all
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/depend
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=9,10 "Built target farray_wrong"
-.PHONY : MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all
-
-# Build rule for subdir invocation for target.
-MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
-.PHONY : MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/rule
-
-# Convenience name for target.
-farray_wrong: MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/rule
-
-.PHONY : farray_wrong
-
-# clean rule for target.
-MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean:
-	$(MAKE) $(MAKESILENT) -f MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/build.make MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean
-.PHONY : MATAR/examples/laplace/CMakeFiles/farray_wrong.dir/clean
-
-#=============================================================================
 # Target rules for target MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir
 
 # All Build rule for target.
 MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/all: MATAR/src/CMakeFiles/matar.dir/all
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/build.make MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/depend
 	$(MAKE) $(MAKESILENT) -f MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/build.make MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=15,16 "Built target test_floyd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=17,18 "Built target test_floyd"
 .PHONY : MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/all
 
 # Build rule for subdir invocation for target.
@@ -592,31 +594,58 @@ MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/clean:
 .PHONY : MATAR/examples/watt-graph/CMakeFiles/test_floyd.dir/clean
 
 #=============================================================================
-# Target rules for target 3wke/CMakeFiles/3wke.dir
+# Target rules for target 3wke/CMakeFiles/RD.dir
 
 # All Build rule for target.
-3wke/CMakeFiles/3wke.dir/all:
-	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/depend
-	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=1,2 "Built target 3wke"
-.PHONY : 3wke/CMakeFiles/3wke.dir/all
+3wke/CMakeFiles/RD.dir/all:
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=3,4 "Built target RD"
+.PHONY : 3wke/CMakeFiles/RD.dir/all
 
 # Build rule for subdir invocation for target.
-3wke/CMakeFiles/3wke.dir/rule: cmake_check_build_system
+3wke/CMakeFiles/RD.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke/CMakeFiles/3wke.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke/CMakeFiles/RD.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
-.PHONY : 3wke/CMakeFiles/3wke.dir/rule
+.PHONY : 3wke/CMakeFiles/RD.dir/rule
 
 # Convenience name for target.
-3wke: 3wke/CMakeFiles/3wke.dir/rule
+RD: 3wke/CMakeFiles/RD.dir/rule
 
-.PHONY : 3wke
+.PHONY : RD
 
 # clean rule for target.
-3wke/CMakeFiles/3wke.dir/clean:
-	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/clean
-.PHONY : 3wke/CMakeFiles/3wke.dir/clean
+3wke/CMakeFiles/RD.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/RD.dir/build.make 3wke/CMakeFiles/RD.dir/clean
+.PHONY : 3wke/CMakeFiles/RD.dir/clean
+
+#=============================================================================
+# Target rules for target 3wke/CMakeFiles/FVS.dir
+
+# All Build rule for target.
+3wke/CMakeFiles/FVS.dir/all:
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=1,2 "Built target FVS"
+.PHONY : 3wke/CMakeFiles/FVS.dir/all
+
+# Build rule for subdir invocation for target.
+3wke/CMakeFiles/FVS.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3wke/CMakeFiles/FVS.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /vast/home/stevenw/WKE/CMakeFiles 0
+.PHONY : 3wke/CMakeFiles/FVS.dir/rule
+
+# Convenience name for target.
+FVS: 3wke/CMakeFiles/FVS.dir/rule
+
+.PHONY : FVS
+
+# clean rule for target.
+3wke/CMakeFiles/FVS.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/FVS.dir/build.make 3wke/CMakeFiles/FVS.dir/clean
+.PHONY : 3wke/CMakeFiles/FVS.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

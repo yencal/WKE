@@ -1,4 +1,4 @@
-set(CMAKE_Fortran_COMPILER "/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gfortran")
+set(CMAKE_Fortran_COMPILER "/projects/opt/ppc64le/p9/gcc/9.4.0/bin/gfortran")
 set(CMAKE_Fortran_COMPILER_ARG1 "")
 set(CMAKE_Fortran_COMPILER_ID "GNU")
 set(CMAKE_Fortran_COMPILER_VERSION "9.4.0")
@@ -11,9 +11,9 @@ set(CMAKE_Fortran_SIMULATE_VERSION "")
 
 
 set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_Fortran_COMPILER_AR "/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc-ar")
+set(CMAKE_Fortran_COMPILER_AR "/projects/opt/ppc64le/p9/gcc/9.4.0/bin/gcc-ar")
 set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_Fortran_COMPILER_RANLIB "/projects/opt/aarch64/rhel8/gcc/9.4.0/bin/gcc-ranlib")
+set(CMAKE_Fortran_COMPILER_RANLIB "/projects/opt/ppc64le/p9/gcc/9.4.0/bin/gcc-ranlib")
 set(CMAKE_COMPILER_IS_GNUG77 1)
 set(CMAKE_Fortran_COMPILER_LOADED 1)
 set(CMAKE_Fortran_COMPILER_WORKS TRUE)
@@ -63,7 +63,7 @@ endif()
 
 
 
-set(CMAKE_Fortran_IMPLICIT_INCLUDE_DIRECTORIES "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/finclude;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include;/usr/local/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/include;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0/include-fixed;/usr/include")
-set(CMAKE_Fortran_IMPLICIT_LINK_LIBRARIES "gfortran;m;gcc_s;gcc;m;gcc_s;gcc;c;gcc_s;gcc")
-set(CMAKE_Fortran_IMPLICIT_LINK_DIRECTORIES "/projects/opt/aarch64/rhel8/gcc/9.4.0/lib/gcc/aarch64-unknown-linux-gnu/9.4.0;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib64;/lib64;/usr/lib64;/projects/opt/aarch64/rhel8/gcc/9.4.0/lib")
+set(CMAKE_Fortran_IMPLICIT_INCLUDE_DIRECTORIES "/projects/opt/ppc64le/p9/gcc/9.4.0/lib/gcc/powerpc64le-unknown-linux-gnu/9.4.0/finclude;/projects/opt/ppc64le/p9/gcc/9.4.0/lib/gcc/powerpc64le-unknown-linux-gnu/9.4.0/include;/usr/local/include;/projects/opt/ppc64le/p9/gcc/9.4.0/include;/projects/opt/ppc64le/p9/gcc/9.4.0/lib/gcc/powerpc64le-unknown-linux-gnu/9.4.0/include-fixed;/usr/include")
+set(CMAKE_Fortran_IMPLICIT_LINK_LIBRARIES "gfortran;m;gcc_s;gcc;quadmath;m;gcc_s;gcc;c;gcc_s;gcc")
+set(CMAKE_Fortran_IMPLICIT_LINK_DIRECTORIES "/projects/opt/ppc64le/p9/gcc/9.4.0/lib/gcc/powerpc64le-unknown-linux-gnu/9.4.0;/projects/opt/ppc64le/p9/gcc/9.4.0/lib64;/lib64;/usr/lib64;/projects/opt/ppc64le/p9/gcc/9.4.0/lib")
 set(CMAKE_Fortran_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
