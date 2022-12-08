@@ -15,8 +15,8 @@ struct node_t {
 
     void initialize(size_t num_rk, size_t num_nodes)
     {
-        this->coords = DCArrayKokkos <double> (num_nodes);
-        this->energy   = DCArrayKokkos <double> (num_rk, num_nodes);
+        this->coords = DCArrayKokkos <double> (num_rk, num_nodes);
+        this->energy   = DCArrayKokkos <double> (num_nodes);
     };
 
 };// end node_t
@@ -35,7 +35,6 @@ struct elem_t {
         this->coords = DCArrayKokkos <double> (num_cells);
         this->energy   = DCArrayKokkos <double> (num_rk, num_cells);
         this->length   = DCArrayKokkos <double> (num_cells);
-        
     };
 
 

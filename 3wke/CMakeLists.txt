@@ -9,6 +9,6 @@ set(Kokkos_DIR ${CMAKE_SOURCE_DIR}/MATAR/src/install-kokkos-cuda/kokkos/lib64/cm
 find_package(Kokkos REQUIRED)
 add_definitions(-DHAVE_KOKKOS=1)
 add_definitions(-DHAVE_CUDA=1)
-add_executable(3wke 3wke.cpp)
+add_executable(3wke 1d.cpp)
 target_link_libraries(3wke ${CMAKE_SOURCE_DIR}/MATAR/build-kokkos-cuda/src/libmatar.a)
 target_link_libraries(3wke Kokkos::kokkos)

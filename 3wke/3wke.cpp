@@ -90,12 +90,11 @@ int main(int argc, char* argv[]){
             node.energy(1,node_id) = 0.0;// initialize energy at n+1
 	    node.energy(0,node_id) = 0.0;// initialize energy at n
 
-	    // set IC //
-	    if ( p_min <= node.coords(node_id) and node.coords(node_id) <= 100){
+	    if ( p_min <= node.coords(node_id) and node.coords(node_id) <= 100.0){
               node.energy(0,node_id) = node.coords(node_id)*(33.33-node.coords(node_id))*(33.33-node.coords(node_id))*(100-node.coords(node_id));// a little energy at lower modes and more energy at higher modes  
 	      node.energy(0,node_id) = node.energy(0,node_id)/129629629.629; // normalize
 	    }
-	    else if ( 100 < node.coords(node_id) ){
+	    else if ( 100.0 < node.coords(node_id) ){
 	      node.energy(0,node_id) = 0.0;
 	    }
         }); // end parallel for on device
@@ -125,7 +124,7 @@ int main(int argc, char* argv[]){
         
         // write data on the host side
         for (int cell_id=0; cell_id<num_cells; cell_id++){
-        fprintf( myfile,"%f\t%f\t%f\t%f\t%f\n",
+        fprintf( myfile,"%f\t%f\t\n",
                  elem.coords.host(cell_id),
                  node.energy.host(0,cell_id) );
         }
@@ -139,7 +138,7 @@ int main(int argc, char* argv[]){
 
 	for (int cycle = 0; cycle<max_cycles; cycle++){
            
-            
+           /* 
             // get the new time step
             double dt_ceiling = dt*1.1;
             
@@ -151,7 +150,7 @@ int main(int argc, char* argv[]){
                 double dx_lcl = node.coords(cell_id+1) - node.coords(cell_id);
                 
                 // local dt calc
-                double dt_lcl_ = dt_cfl;//*dx_lcl/(cell_sspd(cell_id) + fuzz);
+                double dt_lcl_ = dt_cfl*dx_lcl/(cell_sspd(cell_id) + fuzz);
                 
                 // make dt be in bounds
                 dt_lcl_ = fmin(dt_lcl_, dt_max);
@@ -169,7 +168,7 @@ int main(int argc, char* argv[]){
             
             //printf("time = %f, dt = %f \n", time, dt);
             if (dt<=fuzz) break;
-            
+            */
             
             
             // --- integrate forward in time ---
@@ -202,11 +201,11 @@ int main(int argc, char* argv[]){
                 // --- Calculate energy update  ---
                 
                 
-                FOR_ALL (node_id, 0, num_nodes-1, {
+                FOR_ALL (node_id, 0, num_nodes, {
                     
                     // update velocity
                     node.energy(1,node_id) = node.energy(0,node_id) -
-                                rk_alpha*dt;//node_mass(node_id)*sum_node_res(node_id);
+                                0.0*rk_alpha*dt;
                     
                 }); // end parallel for on device
 
@@ -238,16 +237,15 @@ int main(int argc, char* argv[]){
         
         // write out the intial conditions to a file on the host
         myfile=fopen("timeEnd.txt","w");
-        fprintf(myfile,"# x  den  pres  sie vel \n");
+        fprintf(myfile,"# p  energy \n");
         
         // write data on the host side
         for (int cell_id=0; cell_id<num_cells; cell_id++){
-           fprintf( myfile,"%f\t%f\t%f\t%f\t%f\n",
+           fprintf( myfile,"%f\t%f\t\n",
                     elem.coords.host(cell_id),
-                    node.energy.host(cell_id) );
+                    node.energy.host(1,cell_id) );
         }
         fclose(myfile);
-        
         
         Kokkos::fence();
         

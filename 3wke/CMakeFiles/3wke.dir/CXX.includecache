@@ -466,21 +466,15 @@ cuda_runtime_api.h
 crt/host_defines.h
 /projects/darwin-nv/rhel8/aarch64/packages/cuda/11.4.0/include/crt/host_defines.h
 
-/vast/home/stevenw/WKE/3wke/3wke.cpp
+/vast/home/stevenw/WKE/3wke/1d.cpp
 matar.h
 /vast/home/stevenw/WKE/3wke/matar.h
-state.h
-/vast/home/stevenw/WKE/3wke/state.h
 stdio.h
 -
 math.h
 -
 chrono
 -
-
-/vast/home/stevenw/WKE/3wke/state.h
-matar.h
-/vast/home/stevenw/WKE/3wke/matar.h
 
 MATAR/src/install-kokkos-cuda/kokkos/include/Cuda/Kokkos_Cuda_Atomic_Intrinsics.hpp
 Kokkos_Macros.hpp

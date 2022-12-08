@@ -76,27 +76,27 @@ include 3wke/CMakeFiles/3wke.dir/progress.make
 # Include the compile flags for this target's objects.
 include 3wke/CMakeFiles/3wke.dir/flags.make
 
-3wke/CMakeFiles/3wke.dir/3wke.cpp.o: 3wke/CMakeFiles/3wke.dir/flags.make
-3wke/CMakeFiles/3wke.dir/3wke.cpp.o: 3wke/3wke.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object 3wke/CMakeFiles/3wke.dir/3wke.cpp.o"
-	cd /vast/home/stevenw/WKE/3wke && /vast/home/stevenw/WKE/MATAR/src/install-kokkos-cuda/kokkos/bin/kokkos_launch_compiler /vast/home/stevenw/WKE/MATAR/src/install-kokkos-cuda/kokkos/bin/nvcc_wrapper /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/3wke.dir/3wke.cpp.o -c /vast/home/stevenw/WKE/3wke/3wke.cpp
+3wke/CMakeFiles/3wke.dir/1d.cpp.o: 3wke/CMakeFiles/3wke.dir/flags.make
+3wke/CMakeFiles/3wke.dir/1d.cpp.o: 3wke/1d.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object 3wke/CMakeFiles/3wke.dir/1d.cpp.o"
+	cd /vast/home/stevenw/WKE/3wke && /vast/home/stevenw/WKE/MATAR/src/install-kokkos-cuda/kokkos/bin/kokkos_launch_compiler /vast/home/stevenw/WKE/MATAR/src/install-kokkos-cuda/kokkos/bin/nvcc_wrapper /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/3wke.dir/1d.cpp.o -c /vast/home/stevenw/WKE/3wke/1d.cpp
 
-3wke/CMakeFiles/3wke.dir/3wke.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/3wke.dir/3wke.cpp.i"
-	cd /vast/home/stevenw/WKE/3wke && /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /vast/home/stevenw/WKE/3wke/3wke.cpp > CMakeFiles/3wke.dir/3wke.cpp.i
+3wke/CMakeFiles/3wke.dir/1d.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/3wke.dir/1d.cpp.i"
+	cd /vast/home/stevenw/WKE/3wke && /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /vast/home/stevenw/WKE/3wke/1d.cpp > CMakeFiles/3wke.dir/1d.cpp.i
 
-3wke/CMakeFiles/3wke.dir/3wke.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/3wke.dir/3wke.cpp.s"
-	cd /vast/home/stevenw/WKE/3wke && /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /vast/home/stevenw/WKE/3wke/3wke.cpp -o CMakeFiles/3wke.dir/3wke.cpp.s
+3wke/CMakeFiles/3wke.dir/1d.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/3wke.dir/1d.cpp.s"
+	cd /vast/home/stevenw/WKE/3wke && /projects/opt/aarch64/rhel8/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /vast/home/stevenw/WKE/3wke/1d.cpp -o CMakeFiles/3wke.dir/1d.cpp.s
 
 # Object files for target 3wke
 3wke_OBJECTS = \
-"CMakeFiles/3wke.dir/3wke.cpp.o"
+"CMakeFiles/3wke.dir/1d.cpp.o"
 
 # External object files for target 3wke
 3wke_EXTERNAL_OBJECTS =
 
-3wke/3wke: 3wke/CMakeFiles/3wke.dir/3wke.cpp.o
+3wke/3wke: 3wke/CMakeFiles/3wke.dir/1d.cpp.o
 3wke/3wke: 3wke/CMakeFiles/3wke.dir/build.make
 3wke/3wke: MATAR/build-kokkos-cuda/src/libmatar.a
 3wke/3wke: MATAR/src/install-kokkos-cuda/kokkos/lib64/libkokkoscontainers.a

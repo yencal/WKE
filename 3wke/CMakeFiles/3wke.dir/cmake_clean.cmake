@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "3wke"
   "3wke.pdb"
-  "CMakeFiles/3wke.dir/3wke.cpp.o"
+  "CMakeFiles/3wke.dir/1d.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -144,32 +144,32 @@ depend:
 	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/build
 .PHONY : 3wke/fast
 
-3wke.o: 3wke.cpp.o
+1d.o: 1d.cpp.o
 
-.PHONY : 3wke.o
+.PHONY : 1d.o
 
 # target to build an object file
-3wke.cpp.o:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/3wke.cpp.o
-.PHONY : 3wke.cpp.o
+1d.cpp.o:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/1d.cpp.o
+.PHONY : 1d.cpp.o
 
-3wke.i: 3wke.cpp.i
+1d.i: 1d.cpp.i
 
-.PHONY : 3wke.i
+.PHONY : 1d.i
 
 # target to preprocess a source file
-3wke.cpp.i:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/3wke.cpp.i
-.PHONY : 3wke.cpp.i
+1d.cpp.i:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/1d.cpp.i
+.PHONY : 1d.cpp.i
 
-3wke.s: 3wke.cpp.s
+1d.s: 1d.cpp.s
 
-.PHONY : 3wke.s
+.PHONY : 1d.s
 
 # target to generate assembly for a file
-3wke.cpp.s:
-	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/3wke.cpp.s
-.PHONY : 3wke.cpp.s
+1d.cpp.s:
+	cd /vast/home/stevenw/WKE && $(MAKE) $(MAKESILENT) -f 3wke/CMakeFiles/3wke.dir/build.make 3wke/CMakeFiles/3wke.dir/1d.cpp.s
+.PHONY : 1d.cpp.s
 
 # Help Target
 help:
@@ -180,9 +180,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 3wke"
-	@echo "... 3wke.o"
-	@echo "... 3wke.i"
-	@echo "... 3wke.s"
+	@echo "... 1d.o"
+	@echo "... 1d.i"
+	@echo "... 1d.s"
 .PHONY : help
 
 
