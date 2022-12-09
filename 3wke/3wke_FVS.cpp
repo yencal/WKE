@@ -13,19 +13,19 @@ struct region_t{
    double p_max;
 };
 
-double get_collision_term(double Q, DCArrayKokkos <double> g_n, int node_id);
+void get_collision_term(double dQdp, DCArrayKokkos <double> g_n, int cell_id, DCArrayKokkos <double> cell_length, DCArrayKokkos <double> p, int num_cells);
 
 
 int main(int argc, char* argv[]){
     
     const double time_max = 1.0;
-    double       dt       = 0.1;
+    double       dt       = 0.005;
     const int    num_rk_stages = 2;
     const int    max_cycles = 2000000;
 
     const double  p_min = 0.0;
-    const double  p_max = 150.0;
-    const int num_cells = 10*p_max;
+    const double  p_max = 100.0;
+    const int num_cells = 2*p_max;
 
     printf("\nstarting code\n");
     
@@ -43,13 +43,13 @@ int main(int argc, char* argv[]){
     
         DCArrayKokkos <double> node_g(num_nodes);  
         DCArrayKokkos <double> node_g_n(num_nodes);  
-        
+        DCArrayKokkos <double> cell_g(num_cells);
+        DCArrayKokkos <double> cell_g_n(num_cells); 
         DCArrayKokkos <double> cell_coords(num_cells);  
         DCArrayKokkos <double> cell_length(num_cells);   
-        
         DCArrayKokkos <double> node_coords(num_nodes);   
         
-        
+        double dQdp;        
         
         FOR_ALL (node_id, 0, num_nodes, {
            node_coords(node_id) = double(node_id) * dp;
@@ -70,18 +70,27 @@ int main(int argc, char* argv[]){
             node_g(node_id) = 0.0;
             node_g_n(node_id) = 0.0;
             if ( p_min <= node_coords(node_id) and node_coords(node_id) <= 100.0){
-              node_g_n(node_id) = node_coords(node_id)*(33.33-node_coords(node_id))*(33.33-node_coords(node_id))*(100-node_coords(node_id));// a little energy at lower WNs and more energy at higher WNs  
-              node_g_n(node_id) = node_g_n(node_id)/129629629.629; // normalize
+              node_g_n(node_id) = node_coords(node_id)*(33.33-node_coords(node_id))*(33.33-node_coords(node_id))*(100-node_coords(node_id));  
+              node_g_n(node_id) = node_g_n(node_id)/129629629.629; 
             }
             else if ( 100.0 < node_coords(node_id) ){
               node_g_n(node_id) = 0.0;
             }
         }); // end parallel for on device
-        
+       
+        // Trapz approximation of cell average // 
+        FOR_ALL (cell_id, 0, num_cells, {
+            cell_g(cell_id) = 0.0;
+            cell_g_n(cell_id) = 0.0;
+            
+            cell_g(cell_id) = 0.5*(node_g_n(cell_id) + node_g_n(cell_id+1));
+            
+            cell_g_n(cell_id) = 0.5*(node_g_n(cell_id) + node_g_n(cell_id+1));
+        });
         
         // update the host side to print (i.e., copy from device to host)
         cell_coords.update_host();
-        node_g_n.update_host();
+        cell_g_n.update_host();
         
         // write out the intial conditions to a file on the host
         myfile=fopen("outputs/t0.txt","w");
@@ -91,7 +100,7 @@ int main(int argc, char* argv[]){
         for (int cell_id=0; cell_id<num_cells; cell_id++){
           fprintf( myfile,"%f\t%f\n",
                    cell_coords.host(cell_id),
-                   0.5*(node_g_n.host(cell_id)+node_g_n.host(cell_id+1)) );
+                   cell_g_n.host(cell_id) );
         }
           
         fclose(myfile);
@@ -99,28 +108,33 @@ int main(int argc, char* argv[]){
         auto time_1 = std::chrono::high_resolution_clock::now();
         
         for (int cycle = 0; cycle<max_cycles; cycle++){
-           
+            
+            std::cout << "cycle " << cycle << std::endl; 
             
             for (int rk_stage=0; rk_stage<num_rk_stages; rk_stage++ ){
-               
+                 if (rk_stage==0){
+
+                   FOR_ALL (cell_id, 0, num_cells, {
+                     cell_g_n(cell_id) = cell_g(cell_id); 
+                   }); // end parallel for on device
+                 }              
                 // rk coefficient on dt
                 double rk_alpha = 1.0/
                                      (double(num_rk_stages) - double(rk_stage));
 
 
-                FOR_ALL (node_id, 0, num_nodes, {
-                    double Q = 0.0;
-                    get_collision_term(Q, node_g_n, node_id);               
-                    node_g(node_id) = node_g_n(node_id) + rk_alpha*dt*Q;
-                    node_g_n(node_id) = node_g(node_id); 
+                FOR_ALL (cell_id, 0, num_cells, {
+                    get_collision_term(dQdp, cell_g_n, cell_id, cell_length, cell_coords, num_cells);               
+                    cell_g(cell_id) = cell_g_n(cell_id) + cell_coords(cell_id)*rk_alpha*dt*dQdp/cell_length(cell_id);
                 }); // end parallel for on device
 
                 Kokkos::fence();
                 
-                if ((cycle%10000)==0 and cycle!=0){
+
+                if ((cycle%100)==0 and cycle!=0){
                   // update the host side to print (i.e., copy from device to host)
                   cell_coords.update_host();
-                  node_g.update_host();
+                  cell_g.update_host();
         
                   // write out the intial conditions to a file on the host
                   char filename[64];
@@ -132,16 +146,17 @@ int main(int argc, char* argv[]){
                   for (int cell_id=0; cell_id<num_cells; cell_id++){
                     fprintf( myfile,"%f\t%f\n",
                     cell_coords.host(cell_id),
-                    0.5*(node_g.host(cell_id) + node_g.host(cell_id+1)) );
+                    cell_g.host(cell_id) );
                   }
                   fclose(myfile);
                 }// end if
+
             } // end rk loop
 
             
             // update the host side to print (i.e., copy from device to host)
             cell_coords.update_host();
-            node_g.update_host();
+            cell_g.update_host();
         
             myfile=fopen("outputs/tF.txt","a");
 
@@ -151,7 +166,7 @@ int main(int argc, char* argv[]){
             for (int cell_id=0; cell_id<num_cells; cell_id++){
                fprintf( myfile,"%f\t%f\n",
                       cell_coords.host(cell_id),
-                      0.5*(node_g.host(cell_id) + node_g.host(cell_id+1)) );
+                      cell_g.host(cell_id) );
             }
             fclose(myfile);
             
@@ -182,17 +197,66 @@ int main(int argc, char* argv[]){
 } // end main function
 
 
-double get_collision_term(double Q, DCArrayKokkos <real_t> g_n, int node_id){
+void get_collision_term(double dQdp, DCArrayKokkos <double> g_n, int cell_id, DCArrayKokkos <double> cell_length, DCArrayKokkos <double> p, int num_cells){
+    dQdp = 0.0;    
     
-    // construct energy surfaces given wavenumber p //    
-    auto g1 = CArray <double> (node_id);
-    for (int index = 0; index < node_id+1; index++){
-      g1(index) = g_n(index);
-    }
+    double gamma = 2.0;
+    
+    double Q1_right = 0.0;       
+    double Q2_right = 0.0;
+    double Q1_left = 0.0;       
+    double Q2_left = 0.0;
+    
+    
+    for (int index = 0; index < cell_id+1; index++){
+      
+      int lower_index = cell_id+1 - index;
+      double Q11_right = 0.0;
+      for (int k = lower_index; k < cell_id; k++){
+        Q11_right += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5) ;
+      }// end loop over k 
+
+      Q1_right += cell_length(index)*g_n(index)*std::pow(p(index), gamma*0.5) * Q11_right; 
+      
+    }// end loop over index
+
+    for (int index = 0; index < cell_id+1; index++){
+      
+      double Q21_right = 0.0;
+      int lower_index = cell_id+1 - index;
+      for (int k = lower_index; k < cell_id; k++){
+        Q21_right += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5) ;
+      }// end loop over k
+      
+      Q2_right += cell_length(index)*g_n(index)*std::pow(p(index), gamma*0.5) * Q21_right; 
+         
+    }// end loop over index 
 
     
+    for (int index = 0; index < cell_id; index++){
+      
+      int lower_index = cell_id - index;
+      double Q11_left = 0.0;
+      for (int k = lower_index; k < cell_id; k++){
+        Q11_left += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5);
+      }// end loop over k 
 
-    
-    Q = 0.0;
-    return Q;
+      Q1_left += cell_length(index)*g_n(index)*std::pow(p(index), gamma*0.5) * Q11_left; 
+      
+    }// end loop over index
+
+    for (int index = 0; index < cell_id; index++){
+      
+      double Q21_left = 0.0;
+      int lower_index = cell_id - index;
+      for (int k = lower_index; k < cell_id; k++){
+        Q21_left += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5);
+      }// end loop over k
+      
+      Q2_left += cell_length(index)*g_n(index)*std::pow(p(index),gamma*0.5) * Q21_left;
+         
+    }// end loop over index 
+
+    dQdp = Q2_right-Q2_left - 2.0*(Q1_right-Q1_left);
+
 }// end get_collision_term

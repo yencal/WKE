@@ -1,0 +1,12 @@
+set terminal postscript enhanced color
+# set datafile separator ", "
+set output "g0.ps"
+set title "Initial Energy Distribution"
+set xlabel "p"
+set ylabel "g(t,p)"
+set autoscale fix
+set term postscript font "Times-Roman,12"
+plot "t0.txt" using 1:2 with lines lc -1 lw 1 title "t = t0 ", \
+"t100.txt" using 1:2 with lines lc -1 lw 1 title "t = t1 ", \
+"t200.txt" using 1:2 with lines lc -1 lw 1 title "t = t2 ", \
+"t300.txt" using 1:2 with lines lc -1 lw 1 title "t = t3 "
