@@ -6,7 +6,7 @@ set xlabel "p"
 set ylabel "g(t,p)"
 set autoscale fix
 set term postscript font "Times-Roman,12"
-plot "t10.txt" using 1:2 with lines lc -1 lw 1 title "t = t10 ", \
+plot "t10.txt" using 1:2 with lines lc -1 lw 1 title "t = t0 ", \
 "t11.txt" using 1:2 with lines lc 2 lw 1 title "t = t1 ", \
 "t12.txt" using 1:2 with lines lc 4 lw 1 title "t = t2 ", \
 "t13.txt" using 1:2 with lines lc 1 lw 1 title "t = t3 ", \

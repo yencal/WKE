@@ -20,14 +20,14 @@ int main(int argc, char* argv[]){
     
     Kokkos::initialize(argc, argv);
     {
-        const double time_max = 1000.0;
-        double       dt       = 0.005;
+        const double time_max = 50.0;
+        double       dt       = 0.05;
         const int    num_rk_stages = 2;
         const int    max_cycles = 2000000;
 
         const double  p_min = 0.0;
         const double  p_max = 100.0;
-        const int num_cells = 5*p_max;
+        const int num_cells = 10*p_max;
 
         printf("\nstarting code\n");
     
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
         // set g_0 //
         FOR_ALL (node_id, 0, num_nodes, {
             node_g_n(node_id) = 0.0;
-            /*
+            
             if ( p_min <= node_coords(node_id) and node_coords(node_id) <= 100.0){
               node_g_n(node_id) = node_coords(node_id)*(33.33-node_coords(node_id))*(33.33-node_coords(node_id))*(100-node_coords(node_id));  
               node_g_n(node_id) = node_g_n(node_id)/129629629.629; 
@@ -72,8 +72,8 @@ int main(int argc, char* argv[]){
             else if ( 100.0 < node_coords(node_id) ){
               node_g_n(node_id) = 0.0;
             }
-            */
-            node_g_n(node_id) = 1.26157*exp(-50.0*(node_coords(node_id)-1.5)*(node_coords(node_id)-1.5) );  
+            
+            //node_g_n(node_id) = 1.26157*exp(-50.0*(node_coords(node_id)-1.5)*(node_coords(node_id)-1.5) );  
         }); // end parallel for on device
        
         // Trapz approximation of cell average // 
@@ -108,27 +108,28 @@ int main(int argc, char* argv[]){
         for (int cycle = 0; cycle<max_cycles; cycle++){
             
             std::cout << "cycle " << cycle << std::endl; 
-            
+            std::cout << " t = " << time << std::endl;  
             for (int rk_stage=0; rk_stage<num_rk_stages; rk_stage++ ){
-                 if (rk_stage==0){
+                 
+		 if (rk_stage==0){
 
                    FOR_ALL (cell_id, 0, num_cells, {
                      cell_g_n(cell_id) = cell_g(cell_id); 
 		   }); // end parallel for on device
                  
                    Kokkos::fence();
-		 }              
+		 };              
                 // rk coefficient on dt
-                double rk_alpha = 1.0/
-                                     (double(num_rk_stages) - double(rk_stage));
+                double rk_alpha = 1.0/(double(num_rk_stages) - double(rk_stage));
 
 
                 FOR_ALL (cell_id, 0, num_cells, {
                 //for (int cell_id = 0; cell_id < num_cells; cell_id++){
                     double dQdp = 0.0;
                     dQdp = get_collision_term( cell_g_n, cell_id, cell_length, cell_coords, num_cells);               
+                    
                     //Kokkos::fence();
-                    cell_g(cell_id) = cell_g_n(cell_id) + cell_coords(cell_id)*rk_alpha*dt*dQdp/cell_length(cell_id);
+                    cell_g(cell_id) = cell_g_n(cell_id) + cell_coords(cell_id)*dt/dp*rk_alpha*dQdp;
                     
                 //}// end loop over cell_id
                 }); // end parallel for on device
@@ -164,21 +165,9 @@ int main(int argc, char* argv[]){
             cell_coords.update_host();
             cell_g.update_host();
         
-            myfile=fopen("outputs/tF.txt","a");
-
-            fprintf(myfile,"# x  g \n");
-        
-            // write data on the host side
-            for (int cell_id=0; cell_id<num_cells; cell_id++){
-               fprintf( myfile,"%f\t%f\n",
-                      cell_coords.host(cell_id),
-                      cell_g.host(cell_id) );
-            }
-            fclose(myfile);
-            
             // update the time
             time += dt;
-            if (abs(time-time_max)<=fuzz) time=time_max;
+            if (time>=time_max) break;
             
         } // end for cycles in calculation
         //------------- Done with calculation ------------------
@@ -218,12 +207,15 @@ double get_collision_term( DCArrayKokkos <double> g_n, int cell_id, DCArrayKokko
       double Q11_right = 0.0;
       double Q21_right = 0.0;
       for (int k = lower_index; k < cell_id; k++){
-        Q11_right += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5) ;
-        Q21_right += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5) ;
+        Q11_right += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5) ;
       }// end loop over k 
 
-      Q1_right += cell_length(index)*g_n(index)*std::pow(p(index), gamma*0.5) * Q11_right; 
-      Q2_right += cell_length(index)*g_n(index)*std::pow(p(index), gamma*0.5) * Q21_right; 
+      for (int k = lower_index; k < num_cells; k++){
+        Q21_right += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5) ;
+      }// end loop over k 
+      
+      Q1_right += cell_length(index)*(g_n(index)/p(index)) * Q11_right; 
+      Q2_right += cell_length(index)*(g_n(index)/p(index)) * Q21_right; 
          
     //}); // end parallel for on device
     }// end loop over index 
@@ -236,16 +228,19 @@ double get_collision_term( DCArrayKokkos <double> g_n, int cell_id, DCArrayKokko
       double Q11_left = 0.0;
       double Q21_left = 0.0;
       for (int k = lower_index; k < cell_id; k++){
-        Q11_left += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5);
-        Q21_left += cell_length(k)*g_n(k)*std::pow(p(k),gamma*0.5);
+        Q11_left += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5);
       }// end loop over k 
 
-      Q1_left += cell_length(index)*g_n(index)*std::pow(p(index), gamma*0.5) * Q11_left; 
-      Q2_left += cell_length(index)*g_n(index)*std::pow(p(index),gamma*0.5) * Q21_left;
+      for (int k = lower_index; k < num_cells; k++){
+        Q21_left += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5);
+      }// end loop over k 
+
+      Q1_left += cell_length(index)*(g_n(index)/p(index)) * Q11_left; 
+      Q2_left += cell_length(index)*(g_n(index)/p(index)) * Q21_left;
          
     //}); // end parallel for on device
     }// end loop over index 
     //Kokkos::fence();
 
-    return Q2_right-Q2_left - 2.0*(Q1_right-Q1_left);
+    return Q2_right-2.0*Q1_right - Q2_left + 2.0*Q1_left;
 }// end get_collision_term
