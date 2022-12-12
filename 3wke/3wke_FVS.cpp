@@ -6,22 +6,17 @@
 #include <chrono>
 using namespace mtr;
 
-const double fuzz = 1.0E-15;
-
 struct region_t{
    double p_min;
    double p_max;
 };
 
-double get_collision_term(DCArrayKokkos <double> g_n, const int cell_id, DCArrayKokkos <double> cell_length, DCArrayKokkos <double> p, const int num_cells);
-
-
 int main(int argc, char* argv[]){
     
     Kokkos::initialize(argc, argv);
     {
-        const double time_max = 50.0;
-        double       dt       = 0.05;
+        const double time_max = 10.0;
+        double       dt       = 0.0005;
         const int    num_rk_stages = 2;
         const int    max_cycles = 2000000;
 
@@ -29,8 +24,6 @@ int main(int argc, char* argv[]){
         const double  p_max = 100.0;
         const int num_cells = 10*p_max;
 
-        printf("\nstarting code\n");
-    
         FILE * myfile;
     
         const int num_nodes = num_cells+1;
@@ -89,7 +82,7 @@ int main(int argc, char* argv[]){
         // update the host side to print (i.e., copy from device to host)
         cell_coords.update_host();
         cell_g_n.update_host();
-        
+       
         // write out the intial conditions to a file on the host
         myfile=fopen("outputs/t0.txt","w");
         fprintf(myfile,"# x  g \n");
@@ -126,16 +119,70 @@ int main(int argc, char* argv[]){
                 FOR_ALL (cell_id, 0, num_cells, {
                 //for (int cell_id = 0; cell_id < num_cells; cell_id++){
                     double dQdp = 0.0;
-                    dQdp = get_collision_term( cell_g_n, cell_id, cell_length, cell_coords, num_cells);               
+		    double Q_right = 0.0;
+		    double Q_left = 0.0;
+		    
+                    //auto g_n = DViewCArrayKokkos <double> (&cell_g_n(0),num_cells);     
+                    //auto coords = DViewCArrayKokkos <double> (&cell_coords(0), num_cells);     
+                    //auto length = DViewCArrayKokkos <double> (&cell_length(0), num_cells);     
+		    for (int i = 0; i  < cell_id+1; i++){
+                    //Kokkos::parallel_reduce("Right Flux",Kokkos::RangePolicy(0,cell_id+1), 
+		        //KOKKOS_LAMBDA (const int i, double& Q_r_loc ){
+			
+			const double gamma = 2.0;
+			double Q1_inner = 0.0;
+			double Q2_inner = 0.0;
+			double lower_index = cell_id+1-i;
+			
+			for (int k = lower_index; k <= cell_id; k++){
+			  Q1_inner += cell_length(k)*(cell_g_n(k)/cell_coords(k))*std::pow(cell_coords(k)*cell_coords(i), 0.5*gamma);
+			}
+			
+			Q_right += -2.0*( cell_length(i)*( cell_g_n(i)/cell_coords(i) ) )*Q1_inner;
+		        
+			for (int k = lower_index; k <num_cells; k++){
+			  Q2_inner += cell_length(k)*(cell_g_n(k)/cell_coords(k))*std::pow(cell_coords(k)*cell_coords(i), 0.5*gamma);
+			}
+
+			Q_right += (cell_length(i)*( cell_g_n(i)/cell_coords(i) ) )*Q2_inner;
+
+		    }//, Q_right); 
+ 
+		    //Kokkos::parallel_reduce("Left Flux",Kokkos::RangePolicy(0,cell_id), 
+		    //    KOKKOS_LAMBDA (const int i, double& Q_l_loc){
+		    for (int i = 0; i < cell_id; i++){	
+			const double gamma = 2.0;
+			double Q1_inner = 0.0;
+			double Q2_inner = 0.0;
+			double lower_index = cell_id+1-i;
+			
+			for (int k = lower_index; k < cell_id; k++){
+			  Q1_inner += cell_length(k)*(cell_g_n(k)/cell_coords(k))*std::pow(cell_coords(k)*cell_coords(i), 0.5*gamma);
+			}
+			
+			Q_left += -2.0*(cell_length(i)*( cell_g_n(i)/cell_coords(i) ) )*Q1_inner;
+                        //Q_l_loc += -2.0*(cell_length(i)*( cell_g_n(i)/cell_coords(i) ) )*Q1_inner;
+		        
+			for (int k = lower_index; k < num_cells; k++){
+			  Q2_inner += cell_length(k)*(cell_g_n(k)/cell_coords(k))*std::pow(cell_coords(k)*cell_coords(i), 0.5*gamma);
+			}
+
+			Q_left += (cell_length(i)*( cell_g_n(i)/cell_coords(i) ) )*Q2_inner;
+                        //Q_l_loc += (cell_length(i)*( cell_g_n(i)/cell_coords(i) ) )*Q2_inner;
+
+		    }//, Q_left); 
                     
                     //Kokkos::fence();
-                    cell_g(cell_id) = cell_g_n(cell_id) + cell_coords(cell_id)*dt/dp*rk_alpha*dQdp;
+
+		    dQdp = Q_right - Q_left;
+
+		    cell_g(cell_id) = cell_g_n(cell_id) + ( cell_coords(cell_id)/cell_length(cell_id) )*dt*rk_alpha*dQdp;
                     
                 //}// end loop over cell_id
                 }); // end parallel for on device
 
 
-                Kokkos::fence();
+                //Kokkos::fence();
                 
 
                 //if ((cycle%100)==0 and cycle!=0){
@@ -178,69 +225,9 @@ int main(int argc, char* argv[]){
                            <std::chrono::nanoseconds>(time_2 - time_1).count();
         printf("\nCalculation time in seconds: %f \n", calc_time * 1e-9);
         
-        // -------------------------------
-        //    Print final state to a file
-        // -------------------------------
-        
     } // end of kokkos scope
-    printf("\nfinished\n\n");
     Kokkos::finalize();
     return 0;
   
 } // end main function
 
-
-double get_collision_term( DCArrayKokkos <double> g_n, int cell_id, DCArrayKokkos <double> cell_length, DCArrayKokkos <double> p, int num_cells){
-    
-    double gamma = 2.0;
-    
-    double Q1_right = 0.0;       
-    double Q2_right = 0.0;
-    double Q1_left = 0.0;       
-    double Q2_left = 0.0;
-    
-    
-    //FOR_ALL (index, 0, cell_id+1, {
-    for (int index = 0; index < cell_id+1; index++){
-      
-      int lower_index = cell_id+1 - index;
-      double Q11_right = 0.0;
-      double Q21_right = 0.0;
-      for (int k = lower_index; k < cell_id; k++){
-        Q11_right += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5) ;
-      }// end loop over k 
-
-      for (int k = lower_index; k < num_cells; k++){
-        Q21_right += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5) ;
-      }// end loop over k 
-      
-      Q1_right += cell_length(index)*(g_n(index)/p(index)) * Q11_right; 
-      Q2_right += cell_length(index)*(g_n(index)/p(index)) * Q21_right; 
-         
-    //}); // end parallel for on device
-    }// end loop over index 
-    //Kokkos::fence();
-    
-    //FOR_ALL (index, 0, cell_id, {
-    for (int index = 0; index < cell_id; index++){
-      
-      int lower_index = cell_id - index;
-      double Q11_left = 0.0;
-      double Q21_left = 0.0;
-      for (int k = lower_index; k < cell_id; k++){
-        Q11_left += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5);
-      }// end loop over k 
-
-      for (int k = lower_index; k < num_cells; k++){
-        Q21_left += cell_length(k)*(g_n(k)/p(k))*std::pow(p(k)*p(index),gamma*0.5);
-      }// end loop over k 
-
-      Q1_left += cell_length(index)*(g_n(index)/p(index)) * Q11_left; 
-      Q2_left += cell_length(index)*(g_n(index)/p(index)) * Q21_left;
-         
-    //}); // end parallel for on device
-    }// end loop over index 
-    //Kokkos::fence();
-
-    return Q2_right-2.0*Q1_right - Q2_left + 2.0*Q1_left;
-}// end get_collision_term

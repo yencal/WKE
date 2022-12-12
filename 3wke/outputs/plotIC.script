@@ -1,6 +1,6 @@
 set terminal postscript enhanced color
 # set datafile separator ", "
-set output "g0.ps"
+set output "g0_new.ps"
 set title "Initial Energy Distribution"
 set xlabel "p"
 set ylabel "g(0,p)"

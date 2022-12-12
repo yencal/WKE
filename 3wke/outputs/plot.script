@@ -1,17 +1,17 @@
 set terminal postscript enhanced color
 # set datafile separator ", "
-set output "g.ps"
+set output "g_new.ps"
 set title "Energy"
 set xlabel "p"
 set ylabel "g(t,p)"
 set autoscale fix
 set term postscript font "Times-Roman,12"
-plot "t10.txt" using 1:2 with lines lc -1 lw 1 title "t = t0 ", \
-"t11.txt" using 1:2 with lines lc 2 lw 1 title "t = t1 ", \
-"t12.txt" using 1:2 with lines lc 4 lw 1 title "t = t2 ", \
-"t13.txt" using 1:2 with lines lc 1 lw 1 title "t = t3 ", \
-"t14.txt" using 1:2 with lines lc 3 lw 1 title "t = t4 ", \
-"t15.txt" using 1:2 with lines lc 5 lw 1 title "t = t5 "
+plot "t0.txt" using 1:2 with lines lc -1 lw 1 title "t = t0 ", \
+"t1.txt" using 1:2 with lines lc 2 lw 1 title "t = t1 ", \
+"t2.txt" using 1:2 with lines lc 4 lw 1 title "t = t2 ", \
+"t3.txt" using 1:2 with lines lc 1 lw 1 title "t = t3 ", \
+"t4.txt" using 1:2 with lines lc 3 lw 1 title "t = t4 ", \
+"t5.txt" using 1:2 with lines lc 5 lw 1 title "t = t5 "
 #"t16.txt" using 1:2 with lines lc 6 lw 1 title "t = t6 ", \
 #"t17.txt" using 1:2 with lines lc 7 lw 1 title "t = t7 ", \
 #"t18.txt" using 1:2 with lines lc 8 lw 1 title "t = t8 "

@@ -10,6 +10,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "HAVE_CUDA=1"
   "HAVE_KOKKOS=1"
   "KOKKOS_DEPENDENCE"
   )
@@ -18,7 +19,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "MATAR/src"
   "3wke"
-  "MATAR/src/install-kokkos-pthreads/kokkos/include"
+  "MATAR/src/install-kokkos-cuda/kokkos/include"
+  "/projects/darwin-nv/rhel7/ppc64le/packages/cuda/11.4.0/include"
   )
 
 # Targets to which this target links.

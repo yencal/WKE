@@ -79,7 +79,7 @@ include 3wke/CMakeFiles/RD.dir/flags.make
 3wke/CMakeFiles/RD.dir/RD.cpp.o: 3wke/CMakeFiles/RD.dir/flags.make
 3wke/CMakeFiles/RD.dir/RD.cpp.o: 3wke/RD.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object 3wke/CMakeFiles/RD.dir/RD.cpp.o"
-	cd /vast/home/stevenw/WKE/3wke && /projects/opt/ppc64le/p9/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RD.dir/RD.cpp.o -c /vast/home/stevenw/WKE/3wke/RD.cpp
+	cd /vast/home/stevenw/WKE/3wke && /vast/home/stevenw/WKE/MATAR/src/install-kokkos-cuda/kokkos/bin/kokkos_launch_compiler /vast/home/stevenw/WKE/MATAR/src/install-kokkos-cuda/kokkos/bin/nvcc_wrapper /projects/opt/ppc64le/p9/gcc/9.4.0/bin/g++ /projects/opt/ppc64le/p9/gcc/9.4.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RD.dir/RD.cpp.o -c /vast/home/stevenw/WKE/3wke/RD.cpp
 
 3wke/CMakeFiles/RD.dir/RD.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RD.dir/RD.cpp.i"
@@ -98,11 +98,12 @@ RD_EXTERNAL_OBJECTS =
 
 3wke/RD: 3wke/CMakeFiles/RD.dir/RD.cpp.o
 3wke/RD: 3wke/CMakeFiles/RD.dir/build.make
-3wke/RD: MATAR/build-kokkos-pthreads/src/libmatar.a
-3wke/RD: MATAR/src/install-kokkos-pthreads/kokkos/lib64/libkokkoscontainers.a
-3wke/RD: MATAR/src/install-kokkos-pthreads/kokkos/lib64/libkokkoscore.a
-3wke/RD: /usr/lib64/libpthread.so
-3wke/RD: MATAR/src/install-kokkos-pthreads/kokkos/lib64/libkokkossimd.a
+3wke/RD: MATAR/build-kokkos-cuda/src/libmatar.a
+3wke/RD: MATAR/src/install-kokkos-cuda/kokkos/lib64/libkokkoscontainers.a
+3wke/RD: MATAR/src/install-kokkos-cuda/kokkos/lib64/libkokkoscore.a
+3wke/RD: /usr/lib64/libcuda.so
+3wke/RD: /projects/darwin-nv/rhel7/ppc64le/packages/cuda/11.4.0/lib64/libcudart.so
+3wke/RD: MATAR/src/install-kokkos-cuda/kokkos/lib64/libkokkossimd.a
 3wke/RD: 3wke/CMakeFiles/RD.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/vast/home/stevenw/WKE/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable RD"
 	cd /vast/home/stevenw/WKE/3wke && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RD.dir/link.txt --verbose=$(VERBOSE)

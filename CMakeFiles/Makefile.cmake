@@ -127,11 +127,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "MATAR/examples/virtualFcnKokkos/CMakeLists.txt"
   "MATAR/examples/watt-graph/CMakeLists.txt"
   "MATAR/src/CMakeLists.txt"
-  "MATAR/src/install-kokkos-pthreads/kokkos/lib64/cmake/Kokkos/KokkosConfig.cmake"
-  "MATAR/src/install-kokkos-pthreads/kokkos/lib64/cmake/Kokkos/KokkosConfigCommon.cmake"
-  "MATAR/src/install-kokkos-pthreads/kokkos/lib64/cmake/Kokkos/KokkosConfigVersion.cmake"
-  "MATAR/src/install-kokkos-pthreads/kokkos/lib64/cmake/Kokkos/KokkosTargets-release.cmake"
-  "MATAR/src/install-kokkos-pthreads/kokkos/lib64/cmake/Kokkos/KokkosTargets.cmake"
+  "MATAR/src/install-kokkos-cuda/kokkos/lib64/cmake/Kokkos/KokkosConfig.cmake"
+  "MATAR/src/install-kokkos-cuda/kokkos/lib64/cmake/Kokkos/KokkosConfigCommon.cmake"
+  "MATAR/src/install-kokkos-cuda/kokkos/lib64/cmake/Kokkos/KokkosConfigVersion.cmake"
+  "MATAR/src/install-kokkos-cuda/kokkos/lib64/cmake/Kokkos/KokkosTargets-release.cmake"
+  "MATAR/src/install-kokkos-cuda/kokkos/lib64/cmake/Kokkos/KokkosTargets.cmake"
   )
 
 # The corresponding makefile is:
